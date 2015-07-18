@@ -130,7 +130,7 @@ f.requestURI(wallet,undefined,true, function(ok, body, xhr) {
 
   var repository = g.any( $rdf.sym(wallet + "#rules"), SCHEMA('codeRepository') );
   if (repository) repository = repository.value;
-  var points = g.any( $rdf.sym(wallet + "#rules"), URN('codeRepository') );
+  var points = g.any( $rdf.sym(wallet + "#rules"), URN('perCommit') );
   if (points) amount = points.value;
   var reg = /^https:\/\/github.com\/(.*)\/(.*)#this$/.exec(repository);
   console.log(repository);
