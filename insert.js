@@ -52,13 +52,15 @@ console.log('timestamp : ' + timestamp);
 db.serialize(function() {
 
   // check if exists and build query
-  var sql = "SELECT * FROM credit where source = '"+ source + "' and destination = '" + destination + "' and amount = " + amount
+  var sql = "SELECT * FROM credit where source = '"+ source + "' and destination = '" + destination + "' and amount = " + amount;
   if ( description ) {
     sql +=  " and description = '" + description + "'";
   } else {
     sql +=  " and description = null";
   }
-  if ( timestamp ) {
+  if ( timestamp === 'any' ) {
+    // do nothing
+  } else if (timestamp) {
     sql +=  " and timestamp = '" + timestamp + "'";
   } else {
     sql +=  " and timestamp = null";
