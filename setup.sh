@@ -17,6 +17,6 @@ rm credit.db
 ./ico.sh
 ./founder.sh "$FOUNDER"
 
-nodejs ./commits.js
-nodejs ./issues.js
-nodejs ./comments.js
+nodejs ./commits.js $WALLET
+nodejs ./issues.js $WALLET
+nodejs ./comments.js $WALLET
