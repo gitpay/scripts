@@ -92,7 +92,7 @@ f.requestURI(wallet,undefined,true, function(ok, body, xhr) {
       var author = users[commit.author.html_url + '#this'];
       if (!author) continue;
       var distributionBot = 'https://workbot.databox.me/profile/card#me';
-      var currency = 'https://w3id.org/bits';
+      var currency = 'https://w3id.org/cc#bits';
       var command = ' nodejs insert.js "' + distributionBot + '" ' + amount + ' "' + currency + '" "' + author + '" "' + commit.url + '" any';
       console.log(command);
       commands.push(command);
