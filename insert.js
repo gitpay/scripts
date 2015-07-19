@@ -81,6 +81,7 @@ db.serialize(function() {
       process.exit(-1);
     } else {
       // we have a new row, check for funds
+      if (timestamp === 'any') timestamp = null;
 
       console.log('checking balance');
       var sql = "SELECT * FROM ledger where source = '" + source + "'";
