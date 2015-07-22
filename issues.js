@@ -90,7 +90,12 @@ f.requestURI(wallet,undefined,true, function(ok, body, xhr) {
     for (i=0; i<commits.length; i++) {
       var commit = commits[i];
       var author = users[commit.user.html_url + '#this'];
-      if (!author) continue;
+
+      if (!author) {
+          console.log('author webid not found : ' + commit.user.html_url);
+          continue;
+      }
+
       var distributionBot = 'https://workbot.databox.me/profile/card#me';
       var currency = 'https://w3id.org/cc#bits';
       var command = ' nodejs insert.js "' + distributionBot + '" ' + amount + ' "' + currency + '" "' + author + '" "' + commit.url + '" any';
